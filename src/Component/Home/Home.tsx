@@ -1,5 +1,5 @@
 import { ToolOutlined } from '@ant-design/icons'
-import { Col, Row } from 'antd'
+import { Card, Col, Row } from 'antd'
 import React from 'react'
 import AddSell from './AddSell'
 import img from './landing_00-720x379.jpg'
@@ -14,6 +14,20 @@ const Home = () => {
  </Col>
  <Col span={12}>
  <div className='Purches'><Purches /></div>
+ <Card
+              bordered={false}
+              style={{
+                margin: "15% ",
+                borderRadius: "5px",
+                height: "",
+                textAlign: "center",
+                color: "orange",
+                backgroundColor:'rgb(14, 24, 96)'
+              }}
+            >
+              {" "}
+              Available in After implement Instant messaging edition
+            </Card>
  </Col>
  </Row>
 </div>

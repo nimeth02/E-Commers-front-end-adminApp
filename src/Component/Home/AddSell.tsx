@@ -1,11 +1,11 @@
 import { Form, Button, Divider, List, InputNumber } from "antd";
 import React, { useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../app/hook";
-import {   sell_add_I, sell_list_I  } from "../../Interfaces/sellInterface";
+import {   sell_add_list_item_I, sell_list_I  } from "../../Interfaces/sellInterface";
 import Formitem from "../Login/Formitem";
-import { sell_adding } from "../../features/sellslice";
+import { sell_product_one } from "../../features/sellslice";
 
-const  initial_sell_add:sell_add_I={
+const  initial_sell_add:sell_add_list_item_I={
   productId:'',
   quantity:1
 }
@@ -18,7 +18,8 @@ const  initial_sell_add:sell_add_I={
 //   toatal:0
 // }
 const initial_sell_list:sell_list_I={
-  sell_product_list:[]
+  sell_product_list: [],
+
 }
 
 const AddSell = () => {
@@ -30,14 +31,14 @@ const AddSell = () => {
   const handleSubmit = () => {
     console.log(productId,quantity);
     
-    dispatch(sell_adding({productId,quantity}))
+    dispatch(sell_product_one({productId,quantity}))
     setsell_add(initial_sell_add)
   };
-  console.log('sell',sell);
+
   
   const onchange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const {name,value}=e.target
-    console.log(name,value);
+ 
     setsell_add({...sell_add,[name]:value})
   };
   
@@ -54,26 +55,22 @@ const AddSell = () => {
           size={"small"}
         >
           <Formitem onchange={onchange} type={productId} label={"productId"} />
-          {/* <Formitem onchange={onchange} type={""} label={"Price"} /> */}
-          <Formitem onchange={onchange} type={quantity} label={"quantity"} />
-          {/* <InputNumber
-                  // name="price"
+                 <div style={{display:'flex',justifyContent:'right'}}>
+           
+                 quantity :<InputNumber
+                   style={{width:'60%'}}
                   onChange={(value) => {
-                    setsell_add({ ...sell_add, quantity: value });
+                    setsell_add({...sell_add,quantity:value})
                   }}
                   value={quantity}
-                  addonBefore="Rs"
-                /> */}
+                  
+                />
+          </div>
           <Divider orientation={"left"} className="sell_divider" />
-          <div className="btn-sell" style={{display:'flex',justifyContent:'space-around'}}>
+          <div className="btn-sell" style={{display:'flex',justifyContent:'center'}}>
           <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
             <Button type="primary" htmlType="submit" onClick={handleSubmit}>
               Add
-            </Button>
-          </Form.Item>
-          <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-            <Button type="primary" htmlType="submit" onClick={handleSubmit}>
-              Bill
             </Button>
           </Form.Item>
           </div>

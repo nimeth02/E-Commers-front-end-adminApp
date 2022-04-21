@@ -13,7 +13,7 @@ interface onecard{
 }
 
 const Onecard = ({product}:onecard) => {
-    console.log(product,'onecard');
+    
     
     const { Panel } = Collapse;
   const [visible_edit,setvisible_edit]=useState<boolean>(false)

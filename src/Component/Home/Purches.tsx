@@ -1,9 +1,14 @@
 import { Divider, Form ,Button} from 'antd'
 import React, { useEffect, useState } from 'react'
 import { useAppDispatch, useAppSelector } from '../../app/hook'
+import { sellclear, sell_adding } from '../../features/sellslice'
 import Formitem from '../Login/Formitem'
 
-const initial_purchase={
+interface purchase{
+  discount:number
+  total:number
+}
+const initial_purchase:purchase={
   discount:0,
   total:0
 }
@@ -14,7 +19,12 @@ const Purches = () => {
   const [purches,setpurches]=useState(initial_purchase)
   const {discount,total}=purches
     const handleSubmit=()=>{
-      console.log(discount,total);
+      console.log(sell.sell_product_list,total);
+      const sell_product_list=sell.sell_product_list
+      dispatch(sell_adding({sell_product_list,total}))
+      dispatch(sellclear())
+      setpurches(initial_purchase)
+      calculated_total=0
       
     }
     const onchange=(e:React.ChangeEvent<HTMLInputElement>)=>{
@@ -49,7 +59,7 @@ const Purches = () => {
     initialValues={{ remember: true }}
     autoComplete="off"
     size={'small'}
-  ><Formitem onchange={onchange} type={calculated_total} label={'Calculated Price'} />
+  ><Formitem onchange={onchange} type={calculated_total} label={'Calculated'} />
     <Formitem onchange={onchange} type={discount} label={'discount'} />
     <Formitem onchange={onchange} type={total} label={'total'} />
     <Divider className='sell_divider'/>

@@ -43,3 +43,14 @@ export interface product_update{
         img:string
     }]  
     }
+
+
+    export interface button_state{
+        filter:boolean
+        all:boolean
+    }
+    export interface filter_state{
+        instock:boolean,
+        outstock:boolean,
+        range:[number,number]
+    }

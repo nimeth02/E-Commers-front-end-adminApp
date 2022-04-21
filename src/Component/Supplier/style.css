@@ -1,0 +1,11 @@
+.supplier_card_list{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-top: 10%;
+ 
+}
+.supplier_card{
+    margin:1%
+}

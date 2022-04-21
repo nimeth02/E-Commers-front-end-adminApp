@@ -1,5 +1,5 @@
 import { Button, List, Radio, Switch,Row, Col } from 'antd'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import ProductCardAll from './viewMethods/AllProduct.Card'
 import AddProduct from './Add.product'
 import ProductCardCategorywise from './viewMethods/CategorywiseProductCard'
@@ -17,6 +17,7 @@ const Content = () => {
     }
     
   }
+
   return (
     <div> <h1>Products 
      </h1>

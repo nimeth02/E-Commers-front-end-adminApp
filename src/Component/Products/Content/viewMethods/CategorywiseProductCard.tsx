@@ -20,7 +20,7 @@ const ProductCardCategorywise = () => {
          
           //console.log("chill", chill);
           
-          lat = { title:<> <h3>{name}</h3>  </>, key: _id, children: chill,parentId };
+          lat = { title:<> <h3 key={_id}>{name}</h3>  </>, key: _id, children: chill,parentId };
         }
         list.push(lat);
       });
@@ -33,7 +33,7 @@ const ProductCardCategorywise = () => {
       console.log('onCheck', checkedKeys, info);
       setselected(checkedKeys)
     };
-    console.log(selected);
+   // console.log(selected);
     
 return (
   <div><Row>
@@ -49,11 +49,14 @@ return (
   </Col>
   <Col span={17}>
     {products.products.map((product,i)=>{
-      console.log('jj',product)
+      //console.log('categorywise',product)
       // return <>kk</>
      if(selected.includes(product.categorytId._id)){
-      return<><Onecard product={product}/></> 
+      return<><Onecard key={product._id} product={product}/></> 
+     }else if(selected.includes(product.categorytId._id )){
+
      }
+     
      
         // return (<Onecard product={product} />)
       // return 

@@ -16,7 +16,7 @@ const ProductCardAll = () => {
 
   return (
     <div>
-      {products.products.map((product, i) => {
+      {products.products != null && products.products.map((product, i) => {
       
         return (
           <div key={product._id} >

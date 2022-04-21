@@ -1,0 +1,85 @@
+.dashboard_col {
+    margin-top: 0px;
+    float: top;
+    background-color: rgb(20, 33, 96);
+  }
+  .dashboard_col_side {
+    float: top;
+    background-color: rgb(20, 33, 96);
+    height:auto;
+    min-height: 91vh;
+    border-right: 1px solid white;
+  }
+  .dashboard_admin_list{
+    margin-top: 10%;
+    padding: 3%;
+  }
+  .dashboard_admin_one{
+    background-color: rgb(20, 33, 96);
+    color:orange;
+    border: 0;
+    border: 1px solid orange;
+      font-size:1.15em ;
+      width: 100%;
+      height: auto;
+      margin-top: 2%;
+      text-transform: uppercase;
+     
+      font-weight: bold;
+      /* margin:5% 0; */
+      
+  }
+  .dashboard_list_item:hover {
+    background-color: orange;
+    color:rgb(20, 33, 96);
+    font-weight: bold;
+    
+    /* margin:5% 0; */
+    
+}
+/* .dashboard_list_item:visited{
+    background-color: red;
+    color:rgb(20, 33, 96);
+    font-weight: bold;
+    
+
+    
+} */
+.sell_list{
+    /* padding: 2%; */
+    padding: 0;
+    margin: 0;
+}
+.site-calendar-demo-card {
+  width: 300px;
+  border: 1px solid #f4ecec;
+  border-radius: 2px;
+}
+.open{
+background-color: orange;
+border-radius: 5px;
+margin:0 15%;
+color:white
+}
+.close{
+background-color:rgb(20, 33, 96);
+border-radius: 5px;
+margin:0 15%;
+color:white
+}
+.day{
+  background-color: rgb(0, 0, 0);
+  width: 100%;
+  border-radius: 5px;
+ text-align: center;
+  color:white
+  }
+
+  .specialadmin{
+    background-color: rgb(0, 0, 0);
+    width: 30%;
+    border-radius: 5px;
+    margin:0% auto 2% auto;
+   text-align: center;
+    color:white
+    }

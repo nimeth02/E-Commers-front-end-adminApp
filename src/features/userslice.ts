@@ -29,7 +29,7 @@ Authed_admin:false
 export const Admin_user = createAsyncThunk('Admin_user', async () => {
   console.log('getAdmin')
     const res=await axios.get('http://localhost:4020/userAdmin/',{ withCredentials: true })
-    console.log(res.data);
+   // console.log(res.data);
     return res.data.data
  
   

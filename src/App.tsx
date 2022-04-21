@@ -12,6 +12,7 @@ import { useAppDispatch, useAppSelector } from "./app/hook";
 import { Admin_user } from "./features/userslice";
 import Settings from "./Component/Login/settings";
 import PrivateRoutes from "./routes/privateRoutes";
+import Dashboard from "./Component/Dashboard/Dashboard";
 
 function App() {
   const dispatch = useAppDispatch();
@@ -29,7 +30,15 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={user.Authed_admin ? <Home /> : <Login />} />
+          <Route
+            path="/dashboard"
+            element={
+              <PrivateRoutes  permition={'super_admin'}>
+                <Dashboard/>
+              </PrivateRoutes>
+            }
+          />
           <Route path="/product" element={<PrivateRoutes  permition={'admin'}>
           <Product />
               </PrivateRoutes>} />

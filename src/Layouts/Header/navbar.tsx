@@ -37,27 +37,31 @@ function Navbar() {
           Zeeg
           </Link>
         </Menu.Item>   
-        
         <Menu.Item key="2" className="nav_item">
+        <Link to={'/dashboard'} className='nav_link'>
+          Dashboard
+          </Link>
+        </Menu.Item> 
+        <Menu.Item key="3" className="nav_item">
         <Link to={'/category'} className='nav_link'>
           Category
           </Link>
         </Menu.Item>       
       
-        <Menu.Item key="3" className="nav_item">
+        <Menu.Item key="4" className="nav_item">
         <Link to={'/product'} className='nav_link'>
           Product
           </Link>
         </Menu.Item>
               
-        <Menu.Item key="4" className="nav_item" >
+        <Menu.Item key="5" className="nav_item" >
         <Link to={'/supplier'} className='nav_link' >
           Supplier
           </Link>
         </Menu.Item>
            
         <Menu.Item
-          key="5"
+          key="6"
           className="nav_item_profile"
           style={{ marginLeft: "auto"}}
         >

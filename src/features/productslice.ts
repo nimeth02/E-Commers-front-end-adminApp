@@ -4,7 +4,7 @@ import { createAsyncThunk, createSlice
   import  axios  from 'axios'
   
   import { Categories, Category, add_interface, update_interface, delete_interface } from '../Interfaces/categoryInterface'
-import { add_product, productInterface, product_add_Interface, product_initial } from '../Interfaces/productInterface'
+import { add_product, button_state, filter_state, productInterface, product_add_Interface, product_initial } from '../Interfaces/productInterface'
   
   
   
@@ -26,10 +26,10 @@ import { add_product, productInterface, product_add_Interface, product_initial }
  }
 
   
-  export const product_get = createAsyncThunk('product_get', async () => {
+  export const product_get = createAsyncThunk('product_get', async ({filter_state,buttons_state}:{filter_state:filter_state,buttons_state:button_state}) => {
     console.log('products')
-      const res=await axios.get('http://localhost:4020/product/get',{ withCredentials: true })
-     // console.log(res.data.data);
+      const res=await axios.post('http://localhost:4020/product/get',{filter_state,buttons_state},{ withCredentials: true })
+     console.log(res.data.data);
       return res.data.data
    
     
